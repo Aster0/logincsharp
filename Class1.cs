@@ -38,23 +38,13 @@ namespace login
        
         }
 
-        [ServerEvent(Event.ChatMessage)]
-        public void OnChatMessage(Player player, string message)
-        {
-            if(message.StartsWith("spawnVeh"))
-            {
-                Console.WriteLine("spawning");
-                VehicleHash veh = NAPI.Util.VehicleNameToModel("CHIMERA");
-                NAPI.Vehicle.CreateVehicle(veh, player.Position, 0, 0, 0, "Om4n3k");
-            }
-        }
 
         [Command("spawnveh", "~b~/spawnveh ~w~[vehicle]")]
         public void spawnVehicle(Player player, string vehicle)
         {
                 Console.WriteLine("spawning");
                 VehicleHash veh = NAPI.Util.VehicleNameToModel(vehicle);
-                NAPI.Vehicle.CreateVehicle(veh, player.Position, 0, 0, 0, "Om4n3k");
+                NAPI.Vehicle.CreateVehicle(veh, player.Position, 0, 0, 0, "PLATE_HERE");
         }
 
         [Command("despawnveh")]
